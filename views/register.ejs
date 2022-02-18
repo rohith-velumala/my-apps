@@ -31,6 +31,14 @@
 
       <h1 style="text-align: center;color: rgb(46, 114, 202);">Application form for expert</h1>
 
+      <% if(typeof error !== 'undefined') { %>
+        <div class="container alert alert-warning d-flex justify-content-between" role="alert">
+          <%= error %>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+        </div>
+      <% } %>
+
       <div style="margin: 60px 100px 100px 100px">
 
           <form action="/expert/register" method="post">
@@ -63,7 +71,7 @@
             </div>
             <div class="form-group">
               <label for="inputAddress2">Aadhaar Number:</label>
-              <input type="number" class="form-control" id="inputAddress2" placeholder="0648-1234-1234-1234" name="aadhaarNumber">
+              <input type="number" class="form-control" id="inputAddress2" placeholder="0648123412341234" name="aadhaarNumber">
             </div>
             <div class="form-group">
                 <label for="educationQualification">Highest qualification:</label>

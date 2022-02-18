@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://bootswatch.com/4/cosmo/bootstrap.min.css">
-    <title>Document</title>
+    <title>NYKS - Admin</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/">Navbar</a>
+          <a class="navbar-brand" href="/">NYKS</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -19,6 +19,9 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Logout</a>
               </li>
               
           </div>
@@ -33,45 +36,45 @@
                 Welcome Rohith Reddy!</h1>
               <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
               <p>
-                <a href="#" class="btn btn-primary my-2">Main call to action</a>
-                <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+                <a href="#expert" class="btn btn-primary my-2">Find experts</a>
               </p>
             </div>
           </div>
         </section>
-      
-        <div class="album py-5 bg-light">
-          <div class="container">
-      
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-              
-              <% experts.forEach(expert => { %>
 
-                <div class="col">
-                  <div class="card shadow-sm">
-                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-        
-                    <div class="card-body">
-                      <p class="card-text"><%= expert.name.firstName %></p>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                          <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                        </div>
-                        <small class="text-muted">9 mins</small>
-                      </div>
-                    </div>
+        <div class="container">
+          <header class="text-center border-bottom pb-3">
+            <h2>Available Experts :</h2>
+          </header>
+          
+          <% experts.forEach(expert => { %>
+            <div class="container py-4" id="expert">
+              
+              <div class="p-5 mb-4 bg-light rounded-3 text-dark">
+                <div class="container-fluid py-5">
+                  <h2 class="display-5 fw-bold"><%= expert.name.firstName + ' ' + expert
+                    .name.lastName %></h2>
+                    <h4>Email : <%= expert.email %></h4>
+                    <h4>Date of Birth : <%= expert.dateOfBirth %></h4>
+                    <h4>Phone Number : <%= expert.phoneNumber %></h4>
+                    <h4>Aadhaar Number : <%= expert.aadhaarNumber %></h4>
+                    <h4>Education Qualification : <%= expert.educationQualification %></h4>
+                    <h4>Experience : <%= expert.experience %></h4>
+                    <h4>Sex : <%= expert.sex %></h4>
+                    <h4>City : <%= expert.address.city %></h4>
+                    <h4>State : <%= expert.address.state %></h4>
+                    <h4>Zip : <%= expert.address.zip %></h4>
+                    <!-- <button class="btn btn-primary btn-lg" type="button">Example button</button> -->
                   </div>
                 </div>
-
+                
+              </div>
+              
               <% }) %>
               
             </div>
-          </div>
-        </div>
-      
-      </main>
-      
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-</body>
-</html>
+            </main>
+            
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+          </body>
+          </html>

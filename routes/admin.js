@@ -15,10 +15,13 @@ router.post('/login', (req, res) => {
 
     if(username === 'Rohith Reddy' && password === 'password') {
 
-        Expert.find({}, (err, experts) => {
+        const experts = Expert.find({}, (err, experts) => {
             res.render('adminProfile', {experts})
 
         })
+
+        
+        // res.render('adminProfile', { experts })
         
     } else {
         res.render('login')

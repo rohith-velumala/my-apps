@@ -159,7 +159,7 @@ li:nth-child(10){
   margin-bottom: 20px;
 }
 
-a {
+button {
   border: none;
   color: white;
   cursor: pointer;
@@ -168,6 +168,6 @@ a {
   background-color: #019871;
   text-shadow: 0 1px rgba(128, 128, 128, 0.75);
 }
-a:hover {
+button:hover {
   background-color: #85ddbf;
 }

@@ -7,6 +7,7 @@ const expertSchema = new mongoose.Schema({
             lastName: String
         },
         required: true
+
     },
     email: {
         type: String,
@@ -14,15 +15,21 @@ const expertSchema = new mongoose.Schema({
     },
     dateOfBirth: {
         type: Date,
-        // required: true
+         required: true
     },
     phoneNumber: {
         type: Number,
+        unique:true,
+       // min:10,
+        //max:10,
         required: true
     },
     aadhaarNumber: {
         type: Number,
-        required: true
+        //min:12,
+        //max:12,
+        required: true,
+        unique:true
     },
     educationQualification: {
         type: String,
